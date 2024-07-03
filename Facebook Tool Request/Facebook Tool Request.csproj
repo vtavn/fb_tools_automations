@@ -1,0 +1,1259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FF4A819-7EFA-4F59-94B2-6C4E2230EAF4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Facebook_Tool_Request</RootNamespace>
+    <AssemblyName>CuaToolKit</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="AE.Net.Mail, Version=1.7.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AE.Net.Mail.1.7.10.0\lib\net45\AE.Net.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoUpdater.NET, Version=1.8.1.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autoupdater.NET.Official.1.8.2\lib\net45\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.52, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>..\..\..\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI, Version=1.2.0.0, Culture=neutral, PublicKeyToken=537479e8cf7071a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\tienanh\Downloads\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Http">
+      <HintPath>bin\Debug\lib\Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Leaf.xNet, Version=5.2.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Leaf.xNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.3.4.3\lib\net48\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net48\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1774.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1774.30\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1774.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1774.30\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1774.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1774.30\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MimeKit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.3.4.3\lib\net48\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Otp.NET">
+      <HintPath>..\..\..\..\Desktop\xNet\Otp.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=108.0.3.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.108.0.3\lib\netstandard2.0\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.117.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.117.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Async, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Async.4.1.1\lib\net461\System.Linq.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.4.7.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.11.0\lib\netstandard2.0\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TwoFactorAuth.Net, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TwoFactorAuth.Net.1.4.0\lib\net46\TwoFactorAuth.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WebDriver, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.4.10.0\lib\net48\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.4.10.0\lib\net48\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="xNet, Version=3.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\xNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ApiAutoCua.cs" />
+    <Compile Include="Common\ChromedriverUpdater.cs" />
+    <Compile Include="Common\CuaHelpers.cs" />
+    <Compile Include="Common\Helpers.cs" />
+    <Compile Include="Common\Meta.cs" />
+    <Compile Include="Common\MinProxy.cs" />
+    <Compile Include="Common\RequestHTTP.cs" />
+    <Compile Include="Common\ShopLike.cs" />
+    <Compile Include="Common\TinsoftProxy.cs" />
+    <Compile Include="Common\Trash.cs" />
+    <Compile Include="Common\WebCaptcha.cs" />
+    <Compile Include="Common\WebImage.cs" />
+    <Compile Include="core\Base.cs" />
+    <Compile Include="core\Enum\GetContentStatusChrome.cs" />
+    <Compile Include="core\Enum\StatusChromeAccount.cs" />
+    <Compile Include="core\fAccountBin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fAccountBin.Designer.cs">
+      <DependentUpon>fAccountBin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fAddFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fAddFolder.Designer.cs">
+      <DependentUpon>fAddFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fBasetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fBasetup.Designer.cs">
+      <DependentUpon>fBasetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fCaiDatChung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fCaiDatChung.Designer.cs">
+      <DependentUpon>fCaiDatChung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fCaiDatHienThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fCaiDatHienThi.Designer.cs">
+      <DependentUpon>fCaiDatHienThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fCaidatTuongTacPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fCaidatTuongTacPage.Designer.cs">
+      <DependentUpon>fCaidatTuongTacPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fCauHinhKhoiPhucTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fCauHinhKhoiPhucTaiKhoan.Designer.cs">
+      <DependentUpon>fCauHinhKhoiPhucTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fCauHinhTuongTac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fCauHinhTuongTac.Designer.cs">
+      <DependentUpon>fCauHinhTuongTac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fChangeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fChangeInfo.Designer.cs">
+      <DependentUpon>fChangeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fChangeInfoConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fChangeInfoConfig.Designer.cs">
+      <DependentUpon>fChangeInfoConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fChonNhieuFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fChonNhieuFolder.Designer.cs">
+      <DependentUpon>fChonNhieuFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fClearProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fClearProfile.Designer.cs">
+      <DependentUpon>fClearProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fConfigInteract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fConfigInteract.Designer.cs">
+      <DependentUpon>fConfigInteract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fCoppy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fCoppy.Designer.cs">
+      <DependentUpon>fCoppy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fCuaIntro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fCuaIntro.Designer.cs">
+      <DependentUpon>fCuaIntro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fDanhSachKichBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fDanhSachKichBan.Designer.cs">
+      <DependentUpon>fDanhSachKichBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fEditFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fEditFolder.Designer.cs">
+      <DependentUpon>fEditFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fGiaiCheckPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fGiaiCheckPoint.Designer.cs">
+      <DependentUpon>fGiaiCheckPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fGiaiPhongDungLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fGiaiPhongDungLuong.Designer.cs">
+      <DependentUpon>fGiaiPhongDungLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fHuongDanContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fHuongDanContent.Designer.cs">
+      <DependentUpon>fHuongDanContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDBuffViewFb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDBuffViewFb.Designer.cs">
+      <DependentUpon>fHDBuffViewFb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fChangeInfo_HD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fChangeInfo_HD.Designer.cs">
+      <DependentUpon>fChangeInfo_HD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDDangStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDDangStatus.Designer.cs">
+      <DependentUpon>fHDDangStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fImportAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fImportAccount.Designer.cs">
+      <DependentUpon>fImportAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDKetBanGoiY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDKetBanGoiY.Designer.cs">
+      <DependentUpon>fHDKetBanGoiY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDNhiemVuClone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDNhiemVuClone.Designer.cs">
+      <DependentUpon>fHDNhiemVuClone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDKetBanUid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDKetBanUid.Designer.cs">
+      <DependentUpon>fHDKetBanUid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDNghiGiaiLao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDNghiGiaiLao.Designer.cs">
+      <DependentUpon>fHDNghiGiaiLao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDPostStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDPostStatus.Designer.cs">
+      <DependentUpon>fHDPostStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDRegPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDRegPage.Designer.cs">
+      <DependentUpon>fHDRegPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDTimKiemGoogle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDTimKiemGoogle.Designer.cs">
+      <DependentUpon>fHDTimKiemGoogle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDTruyCapWebsite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDTruyCapWebsite.Designer.cs">
+      <DependentUpon>fHDTruyCapWebsite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDXacNhanKetBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fHDXacNhanKetBan.Designer.cs">
+      <DependentUpon>fHDXacNhanKetBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fLuotNewFeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fLuotNewFeed.Designer.cs">
+      <DependentUpon>fLuotNewFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fSeedingFb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fSeedingFb.Designer.cs">
+      <DependentUpon>fSeedingFb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fKichBan\fSpamCommentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fKichBan\fSpamCommentPage.Designer.cs">
+      <DependentUpon>fSpamCommentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fMoTrinhDuyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fMoTrinhDuyet.Designer.cs">
+      <DependentUpon>fMoTrinhDuyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fNhapDuLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fNhapDuLieu.Designer.cs">
+      <DependentUpon>fNhapDuLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fNhapDuLieu2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fNhapDuLieu2.Designer.cs">
+      <DependentUpon>fNhapDuLieu2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fPages\fPageInvite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fPages\fPageInvite.Designer.cs">
+      <DependentUpon>fPageInvite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fPages\fPages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fPages\fPages.Designer.cs">
+      <DependentUpon>fPages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fSelectFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fSelectFolder.Designer.cs">
+      <DependentUpon>fSelectFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fSettingMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fSettingMail.Designer.cs">
+      <DependentUpon>fSettingMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fShowProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fShowProgressBar.Designer.cs">
+      <DependentUpon>fShowProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fThemHanhDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fThemHanhDong.Designer.cs">
+      <DependentUpon>fThemHanhDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fThemKichBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fThemKichBan.Designer.cs">
+      <DependentUpon>fThemKichBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fTools\fGetIdPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fTools\fGetIdPost.Designer.cs">
+      <DependentUpon>fGetIdPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fTools\fScanLive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fTools\fScanLive.Designer.cs">
+      <DependentUpon>fScanLive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fTools\fTienIchLocTrung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fTools\fTienIchLocTrung.Designer.cs">
+      <DependentUpon>fTienIchLocTrung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fToolVip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fToolVip.Designer.cs">
+      <DependentUpon>fToolVip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fupdateData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fupdateData.Designer.cs">
+      <DependentUpon>fupdateData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\fViewChrome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fViewChrome.Designer.cs">
+      <DependentUpon>fViewChrome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\GetIconFacebook.cs" />
+    <Compile Include="core\KichBanPage\Connector.cs" />
+    <Compile Include="core\KichBanPage\fBuffPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\KichBanPage\fBuffPage.Designer.cs">
+      <DependentUpon>fBuffPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\KichBanPage\fSpamCmtPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\KichBanPage\fSpamCmtPage.Designer.cs">
+      <DependentUpon>fSpamCmtPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\KichBanPage\fThemHanhDongPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\KichBanPage\fThemHanhDongPage.Designer.cs">
+      <DependentUpon>fThemHanhDongPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\KichBanPage\fThemKichBanPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\KichBanPage\fThemKichBanPage.Designer.cs">
+      <DependentUpon>fThemKichBanPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\KichBanPage\InteractSQL.cs" />
+    <Compile Include="core\KichBan\Connector.cs" />
+    <Compile Include="core\KichBan\InteractSQL.cs" />
+    <Compile Include="core\Language.cs" />
+    <Compile Include="core\Licence\Hardware.cs" />
+    <Compile Include="core\LoginV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\LoginV2.Designer.cs">
+      <DependentUpon>LoginV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AutoControl.cs" />
+    <Compile Include="Helpers\Chrome.cs" />
+    <Compile Include="Helpers\CollectionHelper.cs" />
+    <Compile Include="Helpers\Common.cs" />
+    <Compile Include="core\fMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\fMain.Designer.cs">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CommonChrome.cs" />
+    <Compile Include="Helpers\CommonCSharp.cs" />
+    <Compile Include="Helpers\CommonRequest.cs" />
+    <Compile Include="Helpers\CommonSQL.cs" />
+    <Compile Include="Helpers\ConfigHelper.cs" />
+    <Compile Include="Helpers\Connector.cs" />
+    <Compile Include="Helpers\CuaGetMail.cs" />
+    <Compile Include="Helpers\DatagridviewHelper.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
+    <Compile Include="Helpers\EMouseKey.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="Helpers\fDownloadFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\fDownloadFile.Designer.cs">
+      <DependentUpon>fDownloadFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\GDI32.cs" />
+    <Compile Include="Helpers\HARDWAREINPUT.cs" />
+    <Compile Include="Helpers\ImageScanOpenCV.cs" />
+    <Compile Include="Helpers\ImapHelper.cs" />
+    <Compile Include="Helpers\INPUT.cs" />
+    <Compile Include="Helpers\InternetConnection.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Helpers\JSON_Settings.cs" />
+    <Compile Include="Helpers\KEYBDINPUT.cs" />
+    <Compile Include="Helpers\KeyCode.cs" />
+    <Compile Include="Helpers\MessageBoxHelper.cs" />
+    <Compile Include="Helpers\MOUSEINPUT.cs" />
+    <Compile Include="Helpers\MOUSEKEYBDHARDWAREINPUT.cs" />
+    <Compile Include="Helpers\RECT.cs" />
+    <Compile Include="Helpers\RequestHttp.cs" />
+    <Compile Include="Helpers\RequestXNet.cs" />
+    <Compile Include="Helpers\SettingsTool.cs" />
+    <Compile Include="Helpers\SetupFolder.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Helpers\User32.cs" />
+    <Compile Include="Helpers\User32Helper.cs" />
+    <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Helpers\VKeys.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShell.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShell2.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShell3.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShortcut.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshShell.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="core\fAccountBin.resx">
+      <DependentUpon>fAccountBin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fAddFolder.resx">
+      <DependentUpon>fAddFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fBasetup.resx">
+      <DependentUpon>fBasetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fCaiDatChung.resx">
+      <DependentUpon>fCaiDatChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fCaiDatHienThi.resx">
+      <DependentUpon>fCaiDatHienThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fCaidatTuongTacPage.resx">
+      <DependentUpon>fCaidatTuongTacPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fCauHinhKhoiPhucTaiKhoan.resx">
+      <DependentUpon>fCauHinhKhoiPhucTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fCauHinhTuongTac.resx">
+      <DependentUpon>fCauHinhTuongTac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fChangeInfo.resx">
+      <DependentUpon>fChangeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fChangeInfoConfig.resx">
+      <DependentUpon>fChangeInfoConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fChonNhieuFolder.resx">
+      <DependentUpon>fChonNhieuFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fClearProfile.resx">
+      <DependentUpon>fClearProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fCoppy.resx">
+      <DependentUpon>fCoppy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fCuaIntro.resx">
+      <DependentUpon>fCuaIntro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fDanhSachKichBan.resx">
+      <DependentUpon>fDanhSachKichBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fEditFolder.resx">
+      <DependentUpon>fEditFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fGiaiCheckPoint.resx">
+      <DependentUpon>fGiaiCheckPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fGiaiPhongDungLuong.resx">
+      <DependentUpon>fGiaiPhongDungLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fHuongDanContent.resx">
+      <DependentUpon>fHuongDanContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDBuffViewFb.resx">
+      <DependentUpon>fHDBuffViewFb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fChangeInfo_HD.resx">
+      <DependentUpon>fChangeInfo_HD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDDangStatus.resx">
+      <DependentUpon>fHDDangStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fImportAccount.resx">
+      <DependentUpon>fImportAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDKetBanGoiY.resx">
+      <DependentUpon>fHDKetBanGoiY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDNhiemVuClone.resx">
+      <DependentUpon>fHDNhiemVuClone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDKetBanUid.resx">
+      <DependentUpon>fHDKetBanUid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDNghiGiaiLao.resx">
+      <DependentUpon>fHDNghiGiaiLao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDPostStatus.resx">
+      <DependentUpon>fHDPostStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDRegPage.resx">
+      <DependentUpon>fHDRegPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDTimKiemGoogle.resx">
+      <DependentUpon>fHDTimKiemGoogle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDTruyCapWebsite.resx">
+      <DependentUpon>fHDTruyCapWebsite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fHDXacNhanKetBan.resx">
+      <DependentUpon>fHDXacNhanKetBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fLuotNewFeed.resx">
+      <DependentUpon>fLuotNewFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fSeedingFb.resx">
+      <DependentUpon>fSeedingFb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fKichBan\fSpamCommentPage.resx">
+      <DependentUpon>fSpamCommentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fMain.resx">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fMoTrinhDuyet.resx">
+      <DependentUpon>fMoTrinhDuyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fNhapDuLieu.resx">
+      <DependentUpon>fNhapDuLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fNhapDuLieu2.resx">
+      <DependentUpon>fNhapDuLieu2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fPages\fPageInvite.resx">
+      <DependentUpon>fPageInvite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fPages\fPages.resx">
+      <DependentUpon>fPages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fSelectFolder.resx">
+      <DependentUpon>fSelectFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fSettingMail.resx">
+      <DependentUpon>fSettingMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fShowProgressBar.resx">
+      <DependentUpon>fShowProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fThemHanhDong.resx">
+      <DependentUpon>fThemHanhDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fThemKichBan.resx">
+      <DependentUpon>fThemKichBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fTools\fGetIdPost.resx">
+      <DependentUpon>fGetIdPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fTools\fScanLive.resx">
+      <DependentUpon>fScanLive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fTools\fTienIchLocTrung.resx">
+      <DependentUpon>fTienIchLocTrung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fToolVip.resx">
+      <DependentUpon>fToolVip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fupdateData.resx">
+      <DependentUpon>fupdateData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\fViewChrome.resx">
+      <DependentUpon>fViewChrome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\KichBanPage\fBuffPage.resx">
+      <DependentUpon>fBuffPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\KichBanPage\fSpamCmtPage.resx">
+      <DependentUpon>fSpamCmtPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\KichBanPage\fThemHanhDongPage.resx">
+      <DependentUpon>fThemHanhDongPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\KichBanPage\fThemKichBanPage.resx">
+      <DependentUpon>fThemKichBanPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\LoginV2.resx">
+      <DependentUpon>LoginV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\fDownloadFile.resx">
+      <DependentUpon>fDownloadFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-math-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-update-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-setting-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-views.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-window-other-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collapse-arrow-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand-arrow-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-stop-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-play-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-scroll-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-windows-client-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-setting-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-replay-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-replay-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-replay-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-work-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-do-not-disturb-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-new-window-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-available-updates-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shutdown-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-done-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-done-18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\number.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-app.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <None Include="Resources\cua-logo1.png" />
+    <None Include="Resources\icons8-clean-22.png" />
+    <None Include="Resources\icons8-keep-clean-221.png" />
+    <None Include="Resources\icons8-keep-clean-22.png" />
+    <None Include="Resources\icons8-scan-22.png" />
+    <None Include="Resources\icon-meta-24.png" />
+    <None Include="Resources\ic-stop-24new.png" />
+    <None Include="Resources\ic-refresh-24new.png" />
+    <None Include="Resources\ic-play-24new.png" />
+    <None Include="Resources\ic-setting-24new.png" />
+    <None Include="Resources\icons8-reload-24.png" />
+    <None Include="Resources\icons8-x-24 %281%29.png" />
+    <None Include="Resources\icons8-x-24.png" />
+    <None Include="Resources\icons8-start-241.png" />
+    <None Include="Resources\ic-circled-play-24.png" />
+    <None Include="Resources\ic-refresh-241.png" />
+    <None Include="Resources\ic-refresh-24.png" />
+    <None Include="Resources\icons8-close-window-24.png" />
+    <None Include="Resources\icons8-maximize-window-24.png" />
+    <None Include="Resources\icons8-minimize-window-24.png" />
+    <None Include="Resources\icons8-minimize-window-22.png" />
+    <None Include="Resources\ic-closednew.png" />
+    <None Include="Resources\ic-full.png" />
+    <None Include="Resources\ic-mini.png" />
+    <None Include="Resources\bg-lg1.png" />
+    <None Include="Resources\bg-lg.png" />
+    <None Include="Resources\back-lg.png" />
+    <None Include="Resources\ic-import-20.png" />
+    <None Include="Resources\icons8-view-20.png" />
+    <None Include="Resources\security-configuration-20.png" />
+    <None Include="Resources\icons8-facebook-22.png" />
+    <None Include="Resources\icons8-restart-24.png" />
+    <None Include="Resources\ic-stop2-35.png" />
+    <None Include="Resources\icons8-stop-40 %281%29.png" />
+    <None Include="Resources\icons8-start-40 %282%29.png" />
+    <None Include="Resources\icons8-stop-40 %282%29.png" />
+    <None Include="Resources\icons8-cancel-351.png" />
+    <None Include="Resources\icons8-start-35 %281%291.png" />
+    <None Include="Resources\icons8-start-35 %281%29.png" />
+    <None Include="Resources\ic-stop-blue-35.png" />
+    <None Include="Resources\icons8-stop-35.png" />
+    <None Include="Resources\icons8-stop-40.png" />
+    <None Include="Resources\icons8-stop-241.png" />
+    <None Include="Resources\icons8-start-24.png" />
+    <None Include="Resources\icons8-delete-221.png" />
+    <None Include="Resources\icons8-restore-22.png" />
+    <None Include="Resources\icons8-disposal-22.png" />
+    <None Include="Resources\icons8-filter-221.png" />
+    <None Include="Resources\icons8-hammer-22.png" />
+    <None Include="Resources\icons8-hammer-35.png" />
+    <None Include="Resources\icons8-pin-code-22.png" />
+    <None Include="Resources\icons8-email-22.png" />
+    <None Include="Resources\icons8-password-22.png" />
+    <None Include="Resources\icons8-rice-22.png" />
+    <None Include="Resources\icons8-error-24.png" />
+    <None Include="Resources\icons8-setting-24.png" />
+    <None Include="Resources\icons8-registration-24.png" />
+    <None Include="Resources\icons8-shutdown-20.png" />
+    <None Include="Resources\icons8-random-20.png" />
+    <None Include="Resources\icons8-upload-to-ftp-20.png" />
+    <None Include="Resources\icons8-add-201.png" />
+    <None Include="Resources\icons8-close-window-29.png" />
+    <None Include="Resources\icons8-maximize-window-29.png" />
+    <None Include="Resources\icons8-minimize-window-29.png" />
+    <None Include="Resources\icons8-close-window-25.png" />
+    <None Include="Resources\icons8-maximize-window-25.png" />
+    <None Include="Resources\icons8-minimize-window-25.png" />
+    <None Include="Resources\cua-logo.png" />
+    <None Include="Resources\icons8-keep-locked-22.png" />
+    <None Include="Resources\icons8-help-22.png" />
+    <None Include="Resources\icons8-mail-22.png" />
+    <None Include="Resources\icons8-vietnam-22.png" />
+    <None Include="Resources\icons8-update-48.png" />
+    <None Include="Resources\icons8-update-left-rotation-48.png" />
+    <None Include="Resources\icons8-avatar-22.png" />
+    <None Include="Resources\icons8-note-22.png" />
+    <None Include="Resources\icons8-male-user-22.png" />
+    <None Include="Resources\icons8-video-id-verification-22.png" />
+    <None Include="Resources\icons8-find-user-male-22.png" />
+    <None Include="Resources\icons8-token-card-code-22.png" />
+    <None Include="Resources\icons8-cookie-22.png" />
+    <None Include="Resources\icons8-change-user-22.png" />
+    <None Include="Resources\icons8-filter-22.png" />
+    <None Include="Resources\icons8-live-22.png" />
+    <None Include="Resources\icons8-featured-22.png" />
+    <None Include="Resources\icons8-chrome-221.png" />
+    <None Include="Resources\icons8-open-in-browser-22.png" />
+    <None Include="Resources\icons8-chrome-22.png" />
+    <None Include="Resources\icons8-copy-22.png" />
+    <None Include="Resources\icons8-select-none-files-22.png" />
+    <None Include="Resources\icons8-delete-22.png" />
+    <None Include="Resources\icons8-shared-folder-22.png" />
+    <None Include="Resources\icons8-close-window-22.png" />
+    <None Include="Resources\icons8-status-22.png" />
+    <None Include="Resources\icons8-choose-22.png" />
+    <None Include="Resources\icons8-ok-22.png" />
+    <None Include="Resources\icons8-select-all-files-22.png" />
+    <None Include="Resources\icons8-select-all-22.png" />
+    <None Include="Resources\icons8-select-all-18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1774.30\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1774.30\build\Microsoft.Web.WebView2.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.4.10.0\build\Selenium.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.4.10.0\build\Selenium.WebDriver.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1774.30\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1774.30\build\Microsoft.Web.WebView2.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.4.10.0\build\Selenium.WebDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.4.10.0\build\Selenium.WebDriver.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <MoveToLibFolder Include="$(OutputPath)*.dll ; $(OutputPath)*.pdb ; $(OutputPath)*.xml" />
+    </ItemGroup>
+  </Target>
+</Project>
